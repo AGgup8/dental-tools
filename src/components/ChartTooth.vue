@@ -1,5 +1,5 @@
 <template>
-  <div class="svg-wrapper">
+  <div class="svg-wrapper" :class="{ 'tooth-interactive': interactive }">
     <img v-if="isSymbolPresent" class="symbol" :src="symbolUrl" />
 
     <ChartPosteriorSvg
@@ -162,5 +162,11 @@ const symbolUrl = computed(() => {
   left: 0;
   top: 0;
   z-index: 1;
+}
+
+.tooth-interactive:hover {
+  .symbol {
+    z-index: 0;
+  }
 }
 </style>
