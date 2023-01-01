@@ -132,7 +132,7 @@ const showModal = ref(false);
 .chart-layout {
   display: grid;
   grid-gap: 2.5em 1.5em;
-  grid-template-columns: min-content auto;
+  grid-template-columns: min-content min-content;
   grid-template-rows: min-content min-content;
 }
 
