@@ -9,7 +9,7 @@
     <AppTitleGroup>
       <h1 class="title">Chart</h1>
       <button title="Clear" class="btn" @click="showModal = true">
-        <img src="../../assets/images/clear.svg" />
+        <IconRestore />
       </button>
       <AppModal v-if="showModal" @outside-click="showModal = false">
         <template v-slot:header>
@@ -80,6 +80,7 @@ import ColorKey from "./components/ColorKey.vue";
 import ChartToothSingle from "./components/ChartToothSingle.vue";
 import { useChartStore } from "../../shared-stores/chartStore.js";
 import AppModal from "../../components/AppModal.vue";
+import { IconRestore } from "@iconify-prerendered/vue-mdi";
 
 const notification = ref("");
 const showNotification = ref(false);

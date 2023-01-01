@@ -8,10 +8,10 @@
     <AppTitleGroup>
       <h1 class="title">Plaque Score</h1>
       <button title="Clear" class="btn" @click="showModal = true">
-        <img src="../../assets/images/clear.svg" />
+        <IconRestore />
       </button>
       <button title="Toggle teeth" class="btn" @click="toggleTeeth">
-        <img src="../../assets/images/teeth.svg" />
+        <IconToothOutline />
       </button>
       <AppModal v-if="showModal" @outside-click="showModal = false">
         <template #header>
@@ -51,6 +51,7 @@ import AppTitleGroup from "../../components/AppTitleGroup.vue";
 import ChartSixSurface from "./components/ChartSixSurface.vue";
 import AppNotification from "../../components/AppNotification.vue";
 import AppModal from "../../components/AppModal.vue";
+import { IconRestore, IconToothOutline } from "@iconify-prerendered/vue-mdi";
 
 const plaqueRepository = PlaqueRepository();
 const mouth = ref([...plaqueRepository.load()]);
