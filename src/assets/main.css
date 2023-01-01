@@ -1,0 +1,51 @@
+@import "./reset.css";
+@import "./base.css";
+
+#app {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.btn {
+  padding-right: 0.75em;
+  padding-left: 0.75em;
+  border: 0;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-primary);
+  height: 2.5em;
+
+  color: var(--color-on-primary);
+  font: var(--label-large);
+}
+
+.btn img {
+    max-height: 1em;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.btn:hover {
+  background-color: var(--color-primary-el-1);
+  color: var(--color-on-primary);
+  transition: var(--transition-standard-short);
+  box-shadow: var(--surface-elevation-1-shadow)
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.end {
+  margin-top: 3rem;
+}

@@ -1,0 +1,95 @@
+:root {
+  --color-primary: #385ba9;
+  --color-on-primary: #ffffff;
+  --color-primary-el-1: #4263ad;
+  --color-secondary: #585e71;
+  --color-on-secondary: #ffffff;
+  --color-secondary-hover: #656b7c;
+  --color-secondary-container: #dce2f9;
+  --color-on-secondary-container: #151b2c;
+  --color-bg: #fff;
+  --color-on-bg: #1b1b1f;
+  --color-surface: #fefbff;
+  --color-surface-el-1: #f4f3fb;
+  --color-surface-el-2: #eeeef8;
+  --color-surface-el-2-hover: #ece9ed;
+  --color-on-surface: #1b1b1f;
+  --color-surface-variant: #e1e2ec;
+  --color-on-surface-variant: #44464f;
+  --color-outline: #757780;
+  --surface-elevation-1-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+    0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+  --surface-elevation-2-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%),
+    0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+
+  --border-radius-extra-small: 4px;
+  --border-radius-small: 8px;
+  --border-radius-medium: 12px;
+  --border-radius-large: 16px;
+  --border-radius-full: 30px;
+
+  --title-small: 600 0.87em/1.25em monospace;
+  --title-medium: 600 1em/1.5em monospace;
+  --title-large: 600 1.37em/1.75em monospace;
+  --label-small: 600 0.68em/1em monospace;
+  --label-medium: 600 0.75em/1em monospace;
+  --label-large: 600 0.87em/1.25em monospace;
+
+  --font-default: monospace;
+  --border-radius: 0.4em;
+  --border-width: 1px;
+  --grid-spacing: 1em;
+  --grid-spacing-small: 0.5em;
+
+  --transition-standard-short: 300ms cubic-bezier(0.2, 0, 0, 1);
+
+  /* --tooth-width: 2.5rem; */
+}
+
+/* @media only screen and (min-width: 768px) {
+  :root {
+    --tooth-width: 2.8rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  :root {
+    --tooth-width: 3.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :root {
+    ---tooth-width: 4rem;
+  }
+} */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  transition: color 0.5s, background-color 0.5s;
+  background: var(--color-bg);
+  font-family: monospace;
+  color: var(--color-on-bg);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0.75em 0;
+}
+h3 {
+  font-size: 1.17em;
+  margin: 0.83em 0;
+}
