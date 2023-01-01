@@ -8,6 +8,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@iconify-prerendered/vue-mdi": "^0.17.1672388948",
     "@vueuse/components": "^9.7.0",
     "@vueuse/core": "^9.7.0",
     "pinia": "^2.0.21",
