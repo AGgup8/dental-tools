@@ -153,7 +153,10 @@ function updateText(text) {
 .tooth {
   --tooth-width: 2rem;
   @media only screen and (min-width: 768px) {
-    --tooth-width: 2.5rem;
+    --tooth-width: 2.25rem;
+  }
+  @media only screen and (min-width: 900px) {
+    --tooth-width: 2.75rem;
   }
   @media only screen and (min-width: 992px) {
     --tooth-width: 3rem;
