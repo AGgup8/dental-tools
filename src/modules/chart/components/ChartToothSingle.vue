@@ -177,13 +177,24 @@ function updateText(text) {
   display: flex;
   flex-direction: column;
   margin: 0 0.1rem;
-  align-self: end;
+}
+
+#lower-left-quadrant,
+#lower-right-quadrant {
+  .tooth {
+    align-self: start;
+  }
+}
+
+#upper-left-quadrant,
+#upper-right-quadrant {
+  .tooth {
+    align-self: end;
+  }
 }
 
 .tooth-wrapper {
-  display: flex;
   position: relative;
-  align-items: flex-end;
 }
 
 .tooth-svg {
