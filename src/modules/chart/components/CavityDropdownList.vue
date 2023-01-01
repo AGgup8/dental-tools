@@ -50,7 +50,8 @@ const emits = defineEmits(["select"]);
   }
 }
 
-#lower-left-quadrant {
+#lower-left-quadrant,
+#upper-left-quadrant {
   .cavity-dropdown-list {
     right: 0;
   }
