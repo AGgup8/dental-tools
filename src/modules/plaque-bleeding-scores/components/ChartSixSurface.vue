@@ -10,7 +10,6 @@
         :activeIndex="activeIndex"
         :activeSurface="activeSurface"
         :show-tooth="showTeeth"
-        @update="update"
         @surface-click="(payload) => selectSurface(payload)"
       />
     </div>
@@ -24,7 +23,6 @@
         :activeIndex="activeIndex"
         :activeSurface="activeSurface"
         :show-tooth="showTeeth"
-        @update="update"
         @surface-click="(payload) => selectSurface(payload)"
       />
     </div>
@@ -38,7 +36,6 @@
         :activeIndex="activeIndex"
         :activeSurface="activeSurface"
         :show-tooth="showTeeth"
-        @update="update"
         @surface-click="(payload) => selectSurface(payload)"
       />
     </div>
@@ -52,7 +49,6 @@
         :activeIndex="activeIndex"
         :activeSurface="activeSurface"
         :show-tooth="showTeeth"
-        @update="update"
         @surface-click="(payload) => selectSurface(payload)"
       />
     </div>
@@ -117,10 +113,6 @@ function selectSurface({ index, surface }) {
     activeIndex.value = index;
     activeSurface.value = surface;
   }
-}
-
-function update(newTooth) {
-  props.onUpdate(newTooth);
 }
 
 onKeyStroke(["0", "Delete", "Backspace"], (e) => {
