@@ -7,11 +7,11 @@
     />
     <AppTitleGroup>
       <h1 class="title">Bleeding Score</h1>
-      <button title="Clear" class="btn" @click="showModal = true">
-        <IconRestore />
+      <button title="Clear" class="btn btn-icon" @click="showModal = true">
+        <IconRestore class="icon" />
       </button>
-      <button title="Toggle teeth" class="btn" @click="toggleTeeth">
-        <IconToothOutline />
+      <button title="Toggle teeth" class="btn btn-icon" @click="toggleTeeth">
+        <IconToothOutline class="icon" />
       </button>
       <AppModal v-if="showModal" @outside-click="showModal = false">
         <template v-slot:header>

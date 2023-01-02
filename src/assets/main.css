@@ -27,7 +27,19 @@ a {
 }
 
 .btn img {
-    max-height: 1em;
+  max-height: 1em;
+}
+
+.btn-icon {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  height: 2.5em;
+  width: 2.5em;
+}
+
+.btn-icon .icon {
+  font-size: 1.5em;
 }
 
 .btn-secondary {
@@ -39,7 +51,7 @@ a {
   background-color: var(--color-primary-el-1);
   color: var(--color-on-primary);
   transition: var(--transition-standard-short);
-  box-shadow: var(--surface-elevation-1-shadow)
+  box-shadow: var(--surface-elevation-1-shadow);
 }
 
 .bold {

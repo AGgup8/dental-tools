@@ -8,8 +8,8 @@
 
     <AppTitleGroup>
       <h1 class="title">Chart</h1>
-      <button title="Clear" class="btn" @click="showModal = true">
-        <IconRestore />
+      <button title="Clear" class="btn btn-icon" @click="showModal = true">
+        <IconRestore class="icon" />
       </button>
       <AppModal v-if="showModal" @outside-click="showModal = false">
         <template v-slot:header>
