@@ -28,12 +28,12 @@
   --border-radius-large: 16px;
   --border-radius-full: 30px;
 
-  --title-small: 600 0.87em/1.25em monospace;
-  --title-medium: 600 1em/1.5em monospace;
-  --title-large: 600 1.37em/1.75em monospace;
-  --label-small: 600 0.68em/1em monospace;
-  --label-medium: 600 0.75em/1em monospace;
-  --label-large: 600 0.87em/1.25em monospace;
+  --title-small: 600 0.87rem/1.25rem monospace;
+  --title-medium: 600 1rem/1.5rem monospace;
+  --title-large: 600 1.37rem/1.75rem monospace;
+  --label-small: 600 0.68rem/1rem monospace;
+  --label-medium: 600 0.75rem/1rem monospace;
+  --label-large: 600 0.87rem/1.25rem monospace;
 
   --font-default: monospace;
   --border-radius: 0.4em;
@@ -82,14 +82,14 @@ body {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2rem;
   margin: 0.67em 0;
 }
 h2 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin: 0.75em 0;
 }
 h3 {
-  font-size: 1.17em;
+  font-size: 1.17rem;
   margin: 0.83em 0;
 }
