@@ -2,9 +2,9 @@
   <div class="nav-layout">
     <TheNavbar />
     <RouterView v-slot="{ Component }">
-      <KeepAlive>
-        <component :is="Component" />
-      </KeepAlive>
+      <!-- <KeepAlive> -->
+      <component :is="Component" />
+      <!-- </KeepAlive> -->
     </RouterView>
     <button
       id="privacy-policy-btn"
