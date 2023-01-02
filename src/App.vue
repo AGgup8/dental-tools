@@ -65,7 +65,6 @@ const showPrivacyModal = ref(false);
   height: 100%;
 
   @media only screen and (max-width: 768px) {
-    grid-template-columns: min-content min-content;
     grid-gap: var(--grid-spacing-small);
   }
 }
