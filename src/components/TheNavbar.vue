@@ -43,7 +43,11 @@ import {
   flex-direction: column;
   justify-content: center;
   width: 5em;
-  padding: 0.5em;
+  padding: 0.25em;
+
+  @media only screen and (min-width: 992px) {
+    width: 5.5em;
+  }
 
   &.navbar {
     background-color: var(--color-surface-el-2);
