@@ -8,10 +8,10 @@
     </RouterView>
     <button
       id="privacy-policy-btn"
-      class="btn btn-secondary"
+      class="btn btn-secondary btn-icon"
       @click="showPrivacyModal = true"
     >
-      <IconLock />
+      <IconLock class="icon" />
     </button>
     <AppModal
       v-if="showPrivacyModal"
