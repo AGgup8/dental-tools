@@ -1,29 +1,41 @@
 <template>
-  <div class="nav navrail">
-    <router-link class="nav-item" to="/charting">
+  <div class="nav navbar">
+    <router-link class="nav-item" to="/charting" v-slot="{ isActive }">
       <div class="nav-icon-frame">
-        <img class="nav-icon" src="../assets/images/charting-icon.svg" />
+        <IconNotebook v-if="isActive" class="nav-icon" />
+        <IconNotebookOutline v-else class="nav-icon" />
       </div>
       <p class="nav-text">Charting</p>
     </router-link>
 
-    <router-link class="nav-item" to="/plaque">
+    <router-link class="nav-item" to="/plaque" v-slot="{ isActive }">
       <div class="nav-icon-frame">
-        <img class="nav-icon" src="../assets/images/plaque-icon.svg" />
+        <IconBacteria v-if="isActive" class="nav-icon" />
+        <IconBacteriaOutline v-else class="nav-icon" />
       </div>
       <p class="nav-text">Plaque</p>
     </router-link>
 
-    <router-link class="nav-item" to="/bleeding">
+    <router-link class="nav-item" to="/bleeding" v-slot="{ isActive }">
       <div class="nav-icon-frame">
-        <img class="nav-icon" src="../assets/images/bleeding-icon.svg" />
+        <IconWater v-if="isActive" class="nav-icon" />
+        <IconWaterOutline v-else class="nav-icon" />
       </div>
       <p class="nav-text">Bleeding</p>
     </router-link>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import {
+  IconBacteria,
+  IconBacteriaOutline,
+  IconNotebook,
+  IconNotebookOutline,
+  IconWater,
+  IconWaterOutline,
+} from "@iconify-prerendered/vue-mdi";
+</script>
 
 <style lang="scss" scoped>
 .nav {
@@ -49,8 +61,14 @@
   margin: 0.75em 0;
 }
 
-.router-link-active.nav-item .nav-icon-frame {
-  background-color: var(--color-secondary-container);
+.router-link-active.nav-item {
+  .nav-icon-frame {
+    background-color: var(--color-secondary-container);
+  }
+
+  .nav-icon {
+    color: var(--color-on-secondary-container);
+  }
 }
 
 .navrail,
@@ -73,6 +91,7 @@
 .nav-icon {
   width: 1.5em;
   height: auto;
+  color: var(--color-on-surface-variant);
 }
 
 .navbar .nav-item:hover {
