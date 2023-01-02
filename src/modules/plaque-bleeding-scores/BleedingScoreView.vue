@@ -36,21 +36,25 @@
       :onUpdate="updateBleedingChart"
       :highlightColor="1"
       :show-teeth="showTeeth"
-      :disable="showModal"
+      :disable="!isActive || showModal"
     />
     <p class="bold end score">Bleeding score: {{ bleedingScore }}%</p>
   </main>
 </template>
 
 <script setup>
-import { computed } from "@vue/reactivity";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import BleedingRepository from "./repository/BleedingRepository.js";
 import AppTitleGroup from "../../components/AppTitleGroup.vue";
 import ChartSixSurface from "./components/ChartSixSurface.vue";
 import AppNotification from "../../components/AppNotification.vue";
 import AppModal from "../../components/AppModal.vue";
 import { IconRestore, IconToothOutline } from "@iconify-prerendered/vue-mdi";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+const currentPath = route.path;
+const isActive = computed(() => route.path == currentPath);
 
 const bleedingRepository = BleedingRepository();
 const mouth = ref([...bleedingRepository.load()]);

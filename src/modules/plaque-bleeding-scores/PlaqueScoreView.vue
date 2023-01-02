@@ -37,7 +37,7 @@
       :onUpdate="updatePlaqueChart"
       :highlightColor="2"
       :show-teeth="showTeeth"
-      :disable="showModal"
+      :disable="!isActive || showModal"
     />
 
     <p class="bold end score">Plaque Score: {{ plaqueScore }}%</p>
@@ -52,6 +52,11 @@ import ChartSixSurface from "./components/ChartSixSurface.vue";
 import AppNotification from "../../components/AppNotification.vue";
 import AppModal from "../../components/AppModal.vue";
 import { IconRestore, IconToothOutline } from "@iconify-prerendered/vue-mdi";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+const currentPath = route.path;
+const isActive = computed(() => route.path == currentPath);
 
 const plaqueRepository = PlaqueRepository();
 const mouth = ref([...plaqueRepository.load()]);
