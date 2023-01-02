@@ -15,31 +15,31 @@ a {
 }
 
 .btn {
-  padding-right: 0.75em;
-  padding-left: 0.75em;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
   border: 0;
   border-radius: var(--border-radius-full);
   background-color: var(--color-primary);
-  height: 2.5em;
+  height: 2.5rem;
 
   color: var(--color-on-primary);
   font: var(--label-large);
 }
 
 .btn img {
-  max-height: 1em;
+  max-height: 1rem;
 }
 
 .btn-icon {
   display: flex;
   justify-content: center;
   padding: 0;
-  height: 2.5em;
-  width: 2.5em;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 .btn-icon .icon {
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .btn-secondary {
