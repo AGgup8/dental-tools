@@ -11,7 +11,7 @@
       class="btn btn-secondary"
       @click="showPrivacyModal = true"
     >
-      <img src="./assets/images/gdpr.svg" />
+      <IconLock />
     </button>
     <AppModal
       v-if="showPrivacyModal"
@@ -52,6 +52,7 @@ import { ref } from "vue";
 import { RouterView } from "vue-router";
 import AppModal from "./components/AppModal.vue";
 import TheNavbar from "./components/TheNavbar.vue";
+import { IconLock } from "@iconify-prerendered/vue-mdi";
 
 const showPrivacyModal = ref(false);
 </script>
