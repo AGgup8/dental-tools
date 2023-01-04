@@ -1,13 +1,13 @@
 import { defineStore } from "pinia";
 import ChartRepository from "../shared-repository/ChartRepository.js";
 
-const chartRepository = ChartRepository()
+const chartRepository = ChartRepository();
 
 export const useChartStore = defineStore("chart", {
   state: () => {
-    return { 
+    return {
       activeSurface: null,
-      chart: chartRepository.load()
+      chart: chartRepository.load(),
     };
   },
 
@@ -16,8 +16,8 @@ export const useChartStore = defineStore("chart", {
     getActiveSurface: (state) => state.activeSurface?.[1],
     getChart: (state) => state.chart,
     getTooth: (state) => {
-      return (index) => state.chart.find(t => t.index == index);
-    }
+      return (index) => state.chart.find((t) => t.index == index);
+    },
   },
 
   actions: {
@@ -25,17 +25,16 @@ export const useChartStore = defineStore("chart", {
       this.activeSurface = null;
     },
 
-    clearChart() {
-      chartRepository.clear();
-      this.chart = chartRepository.load();
+    async clearChart() {
+      this.chart = await chartRepository.clear()
     },
 
     setActiveSurface(data) {
-      this.activeSurface = data
+      this.activeSurface = data;
     },
 
     updateChart({ index, surface, value }) {
-      const data = this.chart.find(tooth => tooth.index == index);
+      const data = this.chart.find((tooth) => tooth.index == index);
 
       if (surface == 0) {
         data.surfaces.whole = value;
@@ -53,6 +52,6 @@ export const useChartStore = defineStore("chart", {
         data.surfaces.extra = value;
       }
       chartRepository.update(this.chart);
-    }
+    },
   },
 });
