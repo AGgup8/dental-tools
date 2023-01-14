@@ -1,17 +1,4 @@
 <template>
-  <!-- <input
-        v-for="(surface, key) in surfaces"
-        :key="key"
-        type="text"
-        maxlength="1"
-        class="surface-input"
-        :class="{ [highlightClass]: surfaces[key] == 1 }"
-        :value="surfaces[key]"
-        @input="onInput($event, key)"
-        @focus="onFocus($event, key)"
-        oninput="this.value=this.value.replace(/[^1]/g,'');"
-      /> -->
-
   <div class="tooth" :class="{ 'tooth-blank': !present }">
     <p
       v-if="!labelBottom"
@@ -21,33 +8,39 @@
       {{ toothIndex }}
     </p>
     <div v-if="showTooth" class="surfaces surfaces-teeth">
-      <input
-        v-for="(surface, key) in surfaces.slice(0, 3)"
-        :key="key"
-        type="text"
-        readonly="readonly"
-        class="surface-box"
-        :class="{
-          [highlightClass]: surfaces[key] == 1,
-          selected: activeIndex == toothIndex && activeSurface == key,
-        }"
-        @focus="$emit('surface-click', { index: toothIndex, surface: key })"
-      />
+      <div class="box-group thick-border">
+        <input
+          v-for="(surface, key) in surfaces.slice(0, 3)"
+          :key="key"
+          type="text"
+          readonly="readonly"
+          class="surface-box"
+          :class="{
+            [highlightClass]: surfaces[key] == 1,
+            selected: activeIndex == toothIndex && activeSurface == key,
+          }"
+          @focus="$emit('surface-click', { index: toothIndex, surface: key })"
+        />
+      </div>
       <ChartTooth :index="toothIndex" />
-      <input
-        v-for="(surface, key) in surfaces.slice(3, 6)"
-        :key="key + 3"
-        type="text"
-        readonly="readonly"
-        class="surface-box"
-        :class="{
-          [highlightClass]: surfaces[key + 3] == 1,
-          selected: activeIndex == toothIndex && activeSurface == key + 3,
-        }"
-        @focus="$emit('surface-click', { index: toothIndex, surface: key + 3 })"
-      />
+      <div class="box-group thick-border">
+        <input
+          v-for="(surface, key) in surfaces.slice(3, 6)"
+          :key="key + 3"
+          type="text"
+          readonly="readonly"
+          class="surface-box"
+          :class="{
+            [highlightClass]: surfaces[key + 3] == 1,
+            selected: activeIndex == toothIndex && activeSurface == key + 3,
+          }"
+          @focus="
+            $emit('surface-click', { index: toothIndex, surface: key + 3 })
+          "
+        />
+      </div>
     </div>
-    <div v-else class="surfaces">
+    <div v-else class="surfaces thick-border">
       <input
         v-for="(surface, key) in surfaces"
         :key="key"
@@ -140,16 +133,21 @@ const highlightClass = determineHighlightClass();
   display: grid;
   grid-template-columns: min-content min-content min-content;
   grid-template-rows: 1fr 1fr;
+}
+
+.thick-border {
   border: 2px solid #000;
 }
 
 .surfaces-teeth {
-  grid-template-rows: min-content min-content min-content;
+  grid-template-rows: min-content;
+  grid-template-columns: min-content;
   grid-row-gap: 0.25em;
+}
 
-  .svg-wrapper {
-    grid-column: span 3;
-  }
+.box-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .surface-input {
@@ -193,7 +191,7 @@ const highlightClass = determineHighlightClass();
 }
 
 .tooth-blank {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .tooth-blank .surfaces {

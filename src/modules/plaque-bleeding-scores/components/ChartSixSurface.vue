@@ -316,7 +316,7 @@ setUpArrowKeyListeners();
 }
 .quadrant-layout {
   display: grid;
-  grid-gap: 0.1rem;
+  grid-gap: 0.15rem;
   grid-template-columns: repeat(8, 1fr);
 }
 </style>
