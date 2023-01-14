@@ -38,6 +38,7 @@
         :activeIndex="activeIndex"
         :activeSurface="activeSurface"
         :show-tooth="showTeeth"
+        :label-bottom="true"
         @surface-click="(payload) => selectSurface(payload)"
         @label-click="(payload) => blankTooth(payload)"
       />
@@ -52,6 +53,7 @@
         :activeIndex="activeIndex"
         :activeSurface="activeSurface"
         :show-tooth="showTeeth"
+        :label-bottom="true"
         @surface-click="(payload) => selectSurface(payload)"
         @label-click="(payload) => blankTooth(payload)"
       />
@@ -306,13 +308,13 @@ setUpArrowKeyListeners();
 <style scoped>
 .chart-layout {
   display: grid;
-  grid-gap: 2.5rem 1.5rem;
+  grid-gap: 2rem 1.5rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
 .quadrant-layout {
   display: grid;
-  grid-gap: 0.25rem;
+  grid-gap: 0.1rem;
   grid-template-columns: repeat(8, 1fr);
 }
 </style>

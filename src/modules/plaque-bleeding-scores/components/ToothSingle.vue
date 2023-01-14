@@ -140,6 +140,7 @@ const highlightClass = determineHighlightClass();
   display: grid;
   grid-template-columns: min-content min-content min-content;
   grid-template-rows: 1fr 1fr;
+  border: 2px solid #000;
 }
 
 .surfaces-teeth {
@@ -192,7 +193,7 @@ const highlightClass = determineHighlightClass();
 }
 
 .tooth-blank {
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .tooth-blank .surfaces {
@@ -201,6 +202,6 @@ const highlightClass = determineHighlightClass();
 
 .tooth-blank input {
   border-color: #000;
-  background-color: #777;
+  background-color: #333;
 }
 </style>
