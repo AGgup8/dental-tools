@@ -11,6 +11,7 @@
         :activeSurface="activeSurface"
         :show-tooth="showTeeth"
         @surface-click="(payload) => selectSurface(payload)"
+        @label-click="(payload) => blankTooth(payload)"
       />
     </div>
     <div class="quadrant-layout">
@@ -24,6 +25,7 @@
         :activeSurface="activeSurface"
         :show-tooth="showTeeth"
         @surface-click="(payload) => selectSurface(payload)"
+        @label-click="(payload) => blankTooth(payload)"
       />
     </div>
     <div class="quadrant-layout">
@@ -37,6 +39,7 @@
         :activeSurface="activeSurface"
         :show-tooth="showTeeth"
         @surface-click="(payload) => selectSurface(payload)"
+        @label-click="(payload) => blankTooth(payload)"
       />
     </div>
     <div class="quadrant-layout">
@@ -50,6 +53,7 @@
         :activeSurface="activeSurface"
         :show-tooth="showTeeth"
         @surface-click="(payload) => selectSurface(payload)"
+        @label-click="(payload) => blankTooth(payload)"
       />
     </div>
   </div>
@@ -112,6 +116,15 @@ function selectSurface({ index, surface }) {
   if (toothToSelect.present) {
     activeIndex.value = index;
     activeSurface.value = surface;
+  }
+}
+
+function blankTooth({ index }) {
+  const toothToBlank = chart.value.find((tooth) => tooth.number == index);
+  if (toothToBlank.present) {
+    toothToBlank.present = false;
+  } else {
+    toothToBlank.present = true;
   }
 }
 

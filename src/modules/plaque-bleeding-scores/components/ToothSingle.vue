@@ -13,7 +13,11 @@
       /> -->
 
   <div class="tooth" :class="{ 'tooth-blank': !present }">
-    <p v-if="!labelBottom" class="tooth-label" @click="blankTooth">
+    <p
+      v-if="!labelBottom"
+      class="tooth-label"
+      @click="$emit('label-click', { index: toothIndex })"
+    >
       {{ toothIndex }}
     </p>
     <div v-if="showTooth" class="surfaces surfaces-teeth">
@@ -57,7 +61,11 @@
         @focus="$emit('surface-click', { index: toothIndex, surface: key })"
       />
     </div>
-    <p v-if="labelBottom" class="tooth-label" @click="blankTooth">
+    <p
+      v-if="labelBottom"
+      class="tooth-label"
+      @click="$emit('label-click', { index: toothIndex })"
+    >
       {{ toothIndex }}
     </p>
   </div>
@@ -89,7 +97,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["surface-click", "update"]);
+const emit = defineEmits(["surface-click", "label-click"]);
 
 const tooth = computed(() => props.tooth);
 const present = computed(() => tooth.value.present);
@@ -105,16 +113,6 @@ function determineHighlightClass() {
   }
 }
 const highlightClass = determineHighlightClass();
-
-function blankTooth() {
-  const newTooth = JSON.parse(JSON.stringify(tooth.value));
-  if (newTooth.present) {
-    newTooth.present = false;
-  } else {
-    newTooth.present = true;
-  }
-  emit("update", newTooth);
-}
 </script>
 
 <style scoped lang="scss">
