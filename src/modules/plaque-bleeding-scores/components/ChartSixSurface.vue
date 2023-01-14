@@ -123,11 +123,13 @@ function selectSurface({ index, surface }) {
 
 function blankTooth({ index }) {
   const toothToBlank = chart.value.find((tooth) => tooth.number == index);
+  const editedTooth = JSON.parse(JSON.stringify(toothToBlank));
   if (toothToBlank.present) {
-    toothToBlank.present = false;
+    editedTooth.present = false;
   } else {
-    toothToBlank.present = true;
+    editedTooth.present = true;
   }
+  props.onUpdate(editedTooth);
 }
 
 onKeyStroke(["0", "Delete", "Backspace"], (e) => {
