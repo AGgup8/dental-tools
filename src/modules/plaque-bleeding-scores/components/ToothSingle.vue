@@ -8,7 +8,7 @@
       {{ toothIndex }}
     </p>
     <div v-if="showTooth" class="surfaces surfaces-teeth">
-      <div class="box-group thick-border">
+      <div class="box-group">
         <input
           v-for="(surface, key) in surfaces.slice(0, 3)"
           :key="key"
@@ -23,7 +23,7 @@
         />
       </div>
       <ChartTooth :index="toothIndex" />
-      <div class="box-group thick-border">
+      <div class="box-group">
         <input
           v-for="(surface, key) in surfaces.slice(3, 6)"
           :key="key + 3"
@@ -40,7 +40,7 @@
         />
       </div>
     </div>
-    <div v-else class="surfaces thick-border">
+    <div v-else class="surfaces">
       <input
         v-for="(surface, key) in surfaces"
         :key="key"
