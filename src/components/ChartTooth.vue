@@ -110,6 +110,8 @@ const symbolUrl = computed(() => {
     name = "recently-extracted.svg";
   } else if (surfaces.value.whole == "RC") {
     name = "retained-c.svg";
+  } else if (surfaces.value.whole == "RR") {
+    name = "retained-root.svg";
   } else if (surfaces.value.whole == "SC") {
     name = "space-closed.svg";
   } else if (

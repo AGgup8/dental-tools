@@ -49,6 +49,7 @@ const options = [
   ["Porcelain Veneer", "PV"],
   ["Recently Extracted", "RE"],
   ["Retained C", "RC"],
+  ["Retained Root", "RR"],
   ["Rotated Mesially", "RM"],
   ["Rotated Distally", "RD"],
   ["Spaced Closed", "SC"],
